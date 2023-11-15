@@ -39,7 +39,7 @@ jobs:
           key: ${{ secrets.TEST_EC2_KEY }}
           script: |
             docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
-            docker stop gallant_antonelli || true
-            docker rm gallant_antonelli || true
+            docker stop cicd || true
+            docker rm cicd || true
             docker pull amerkul/cicd:1.0.${{ github.run_number }}
             docker run -d --name cicd -p 8888:8888 amerkul/cicd:1.0.${{ github.run_number }}
