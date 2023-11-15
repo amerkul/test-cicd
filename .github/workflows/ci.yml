@@ -42,5 +42,4 @@ jobs:
             docker stop cicd || true
             docker rm cicd || true
             docker rmi $(docker images | grep "amerkul/cicd" | awk '{print $3}')
-            docker pull amerkul/cicd:1.0.${{ github.run_number }}
-            docker run -d --name cicd -p 8888:8888 amerkul/cicd:1.0.${{ github.run_number }}
+            dockeк-compose up -d
