@@ -3,9 +3,7 @@ version: '3.8'
 services:
   app:
     container_name: cicd
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: amerkul/cicd:latest
     ports:
       - "8888:8888"
     networks:
