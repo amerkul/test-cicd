@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     container_name: cicd
-    image: amerkul/cicd:latest
+    image: amerkul/cicd:1.0.15
     ports:
       - "8888:8888"
     networks:
