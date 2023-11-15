@@ -42,4 +42,4 @@ jobs:
             docker stop cicd || true
             docker rm cicd || true
             docker rmi $(docker images | grep "amerkul/cicd" | awk '{print $3}')
-            dockeк-compose up -d
+            docker-compose up -d
