@@ -41,6 +41,6 @@ jobs:
             docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
             docker stop cicd || true
             docker rm cicd || true
-            docker image rm amerkul/cicd:1.0.$((${{ github.run_number }} - 1))
+            docker rmi amerkul/cicd || true
             docker pull amerkul/cicd:1.0.${{ github.run_number }}
             docker run -d --name cicd -p 8888:8888 amerkul/cicd:1.0.${{ github.run_number }}
