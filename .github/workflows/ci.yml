@@ -31,3 +31,15 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Pull & Deploy on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TEST_EC2_HOST }}
+          username: ${{ secrets.TEST_EC2_USERNAME }}
+          key: ${{ secrets.TEST_EC2_KEY }}
+          script: |
+            docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
+            docker stop amerkul/cicd || true
+            docker rm amerkul/cicd || true
+            docker pull amerkul/cicd:1.0.$GITHUB_RUN_NUMBER
+            docker run -d -p 8888:8888 amerkul/cicd:1.0.$GITHUB_RUN_NUMBER
