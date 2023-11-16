@@ -1,5 +1,8 @@
 name: CI Workflow with Maven
 
+concurrency:
+  group: ${{ github.workflow }}
+  
 on:
   push:
     branches: [ "main" ]
@@ -11,11 +14,6 @@ jobs:
   build-and-push-to-registry:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        deploy-order: [1]
-    env:
-      DEPLOY_ORDER: ${{ matrix.deploy-order }}-${{ github.run_id }}
 
     steps:
       - name: Check out codebase
