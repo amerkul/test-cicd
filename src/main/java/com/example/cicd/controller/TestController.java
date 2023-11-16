@@ -13,15 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message", produces = "application/json")
+    @GetMapping(value = "/message1", produces = "application/json")
     public String getMessage(){
         return "Test message 45";
 
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/message2", produces = "application/json")
+    public String getMessage2(){
+        return "Test message 11";
+    }
+
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/message3", produces = "application/json")
-    public String getMessage3(){
+    public String getMessage3() {
         return "Test message 456789";
     }
 
