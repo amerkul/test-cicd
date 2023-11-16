@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @NoArgsConstructor
-@RequestMapping("/api")
-public class TestController {
+@RequestMapping("/api1")
+public class TestController1 {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/message1", produces = "application/json")
     public String getMessage(){
-        return "Test message 456";
+        return "Test message 1";
     }
   
 }
