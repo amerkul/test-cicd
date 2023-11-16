@@ -45,5 +45,5 @@ jobs:
             docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
             docker stop cicd || true
             docker rm cicd || true
-            docker rmi $(docker images | grep "amerkul/cicd" | awk '{print $3}')
+            docker rmi $(docker images | grep "amerkul/cicd" | awk '{print $3}') || true
             docker-compose up -d app
