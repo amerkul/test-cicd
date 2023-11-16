@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @NoArgsConstructor
 @RequestMapping("/api")
-public class TestController {
+public class TestController2 {
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message", produces = "application/json")
+    @GetMapping(value = "/message2", produces = "application/json")
     public String getMessage(){
-        return "Test message 3";
+        return "Test message 2";
     }
 
 }
