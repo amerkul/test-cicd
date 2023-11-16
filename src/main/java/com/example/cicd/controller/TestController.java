@@ -15,8 +15,7 @@ public class TestController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/message1", produces = "application/json")
     public String getMessage(){
-        return "Test message 45";
-
+        return "Test message 456";
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -35,6 +34,12 @@ public class TestController {
     @GetMapping(value = "/message6", produces = "application/json")
     public String getMessage6(){
         return "Test message 456";
+    }
+  
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/message3", produces = "application/json")
+    public String getMessage3() {
+        return "Test message 456789";
     }
 
 }
