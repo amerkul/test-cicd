@@ -18,4 +18,10 @@ public class TestController {
         return "Test message 456";
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/message2", produces = "application/json")
+    public String getMessage2(){
+        return "Test message 11";
+    }
+
 }
