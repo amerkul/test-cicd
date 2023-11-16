@@ -1,6 +1,4 @@
 name: CI Workflow with Maven
-concurrency:
-  group: ${{ github.workflow }}
 
 on:
   push:
