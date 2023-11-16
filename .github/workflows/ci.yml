@@ -11,6 +11,9 @@ jobs:
   build-and-push-to-registry:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        deploy-order: [1]
 
     steps:
       - name: Check out codebase
