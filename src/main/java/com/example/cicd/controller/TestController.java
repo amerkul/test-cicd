@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message", produces = "application/json")
+    @GetMapping(value = "/message1", produces = "application/json")
     public String getMessage(){
-        return "Test message 45";
-
+        return "Test message 456";
     }
 
 }
