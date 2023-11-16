@@ -3,6 +3,7 @@ name: CI Workflow with Maven
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: false
+  cancel-in-queue: false
   
 on:
   push:
