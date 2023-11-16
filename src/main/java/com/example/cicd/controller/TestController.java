@@ -17,47 +17,5 @@ public class TestController {
     public String getMessage(){
         return "Test message 456";
     }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message6", produces = "application/json")
-    public String getMessage6(){
-        return "Test message 456";
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message2", produces = "application/json")
-    public String getMessage2(){
-        return "Test message 11";
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message3", produces = "application/json")
-    public String getMessage3() {
-        return "Test message 456789";
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message4", produces = "application/json")
-    public String getMessage4() {
-        return "Test message 456789";
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message5", produces = "application/json")
-    public String getMessage5(){
-        return "Test message 11";
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message6", produces = "application/json")
-    public String getMessage6(){
-        return "Test message 456";
-    }
   
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/message3", produces = "application/json")
-    public String getMessage3() {
-        return "Test message 456789";
-    }
-
 }
