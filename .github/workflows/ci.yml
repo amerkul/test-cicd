@@ -14,6 +14,8 @@ jobs:
     strategy:
       matrix:
         deploy-order: [1]
+    env:
+      DEPLOY_ORDER: ${{ matrix.deploy-order }}-${{ github.run_id }}
 
     steps:
       - name: Check out codebase
