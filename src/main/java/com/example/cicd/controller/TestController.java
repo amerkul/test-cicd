@@ -16,6 +16,7 @@ public class TestController {
     @GetMapping(value = "/message", produces = "application/json")
     public String getMessage(){
         return "Test message 45";
+
     }
 
 }
