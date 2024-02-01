@@ -42,8 +42,8 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           script: |
-            docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
-            docker stop cicd || true
-            docker rm cicd || true
-            docker rmi $(docker images | grep "amerkul/cicd" | awk '{print $3}') || true
-            docker-compose up -d app
+            sudo docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
+            sudo docker stop insync || true
+            sudo docker rm insync || true
+            sudo docker rmi $(docker images | grep "solvd/insync" | awk '{print $3}') -f
+            sudo docker-compose up -d insync
