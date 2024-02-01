@@ -45,5 +45,6 @@ jobs:
             sudo docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} 
             sudo docker stop insync || true
             sudo docker rm insync || true
-            sudo docker rmi $(docker images | grep "solvd/insync" | awk '{print $3}') -f
+            sudo docker rmi $(sudo docker images | grep "solvd/insync" | awk '{print $3}') -f
+            cd insync
             sudo docker-compose up -d insync
